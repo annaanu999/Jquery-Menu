@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <title></title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<head>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<style type="text/css">
+ #node1
+  {  
+   	background-color: #000000;
+    height: 490px;
+    left: 28%;
+    overflow: hidden;
+    position: absolute;
+    top: 5%;
+    width: 489px;
+    z-index:1;
+  }
+ 
+  .small-box {
+   float: left;
+   width: 150px;
+   height:150px;
+   margin:5px 0 2px 6px;
+   position:absolute;
+   background-repeat:repeat-x;
+   color:#fff;
+   z-index:1;
+   display:inline-block;
+   
+  }
+  #node2 {
+   background-color:#8A2BE2;
+   left:8px;
+   top:8px;
+  }
+  #node3 {
+   background-color:#A52A2A;
+   left:164px;
+   top:8px;
+  }
+  #node4 {
+   background-color:#B8860B;
+   left:320px;
+   top:8px;
+  }
+  #node5 {
+   background-color:#D2691E;
+   left:8px;
+   top:165px;
+  }
+  #node6 {
+   background-color:#556B2F;
+   left:164px;
+   top:165px;
+  }
+  #node7 {
+   background-color:#00BFFF;
+   left:320px;
+   top:165px;
+  }
+  #node8 {
+   background-color:#DAA520;
+   left:8px;
+   top:322px;
+  }
+  #node9 {
+   background-color:#F08080;
+   left:164px;
+   top:322px;
+  }
+  #node10 {
+   background-color:#D2B48C;
+   left:320px;
+   top:322px;
+  }
+	</style>
+</head>
+<body>
+<div id="node1">
+	<div id="node2" class="small-box right-move">Box1</div>
+	<div id="node3" class="small-box left-move">Box2</div>
+	<div id="node4" class="small-box bottom-move">Box3</div>
+	
+	<div id="node5" class="small-box top-move">Box4</div>
+	<div id="node6" class="small-box right-move">Box5</div>
+	<div id="node7" class="small-box top-move">Box6</div>
+	
+	<div id="node8" class="small-box right-move">Box7</div>
+	<div id="node9" class="small-box top-move">Box8</div>
+	<div id="node10" class="small-box left-move">Box9</div>
+</div><!-- #node1 end -->
+</body>
+<script type="text/javascript">
+	$(document).ready(function () {
+		
+		//moving to right side
+		
+		$(".right-move").click(
+			function () {
+				$(this).css("z-index",'999');
+				$(this).animate({ width:'306px'},1000);
+			});
+		$(".right-move").mouseleave(
+			function () {
+				$(this).animate({
+					width:'150px',
+					zIndex:'1'
+				});
+			});	
+		
+		
+		// moving to bottom
+		
+		$(".bottom-move").click(
+			function () {
+				$(this).css("z-index",'999');
+				$(this).animate({height:'307px'},1000);
+			});
+		
+			
+		$(".bottom-move").mouseleave(	
+			function () {
+				$(this).animate({
+					height:'150px',
+					zIndex:'1'
+				});
+				
+		});	
+		
+		//moving to left side
+	
+		$(".left-move").click(
+			function () {
+				$(this).animate({
+					marginLeft:'-150px',
+					width:'306px',
+					zIndex:'999'
+			 	},1000);
+		});
+			
+		$(".left-move").mouseleave(function () {
+				$(this).animate({
+					marginLeft:'6px',
+					width:'150px',
+					zIndex:'1'
+			 	});	 	
+		});
+	
+		
+		
+		
+		// moving to top
+		
+		$(".top-move").click(
+			function () {
+				$(this).animate({
+					height:'306px',
+					marginTop:'-152px',
+				},1000);
+		});
+			
+		$(".top-move").mouseleave(	
+			function () {
+				$(this).animate({
+					height:'150px',
+					marginTop:'5px',
+				});
+				
+		});	
+	});
+
+</script>
+</html>
